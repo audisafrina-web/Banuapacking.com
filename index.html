@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Banua Packing | Marketplace Banua Packing</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; }
+    body { background: #f4f6f8; color: #333; }
+
+    header {
+      background: linear-gradient(135deg, #0d47a1, #1976d2);
+      color: #fff;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .container-logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+    }
+    .logo {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #fff;
+      box-shadow: 0 2px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+    }
+    .logo:hover{
+      transform: scale(1.05);
+    }
+
+    header h1 { font-size: 24px; letter-spacing: 1px; }
+    nav a {
+      color: #fff;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    nav a:hover { text-decoration: underline; }
+
+    .hero {
+      background: url('image/Banner.jpeg') center/cover no-repeat;
+      padding: 100px 40px;
+      text-align: center;
+      color: white;
+      min-height: 400px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .hero h2 { font-size: 40px; margin-bottom: 15px; }
+    .hero p { font-size: 18px; margin-bottom: 25px; }
+    .btn {
+      background: #ff9800;
+      color: white;
+      padding: 12px 30px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .btn:hover { background: #fb8c00; }
+
+    .container { padding: 40px; max-width: 1200px; margin: auto; }
+    .section-title {
+      font-size: 28px;
+      margin-bottom: 25px;
+      text-align: center;
+    }
+
+    .search-box {
+      padding: 20px;
+      background: #fff;
+      border-bottom: 1px solid #333;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      transition: transform 0.3s;
+    }
+    .card:hover { transform: translateY(-5px); }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    .card-body { padding: 20px; }
+    .card-body h3 { font-size: 20px; margin-bottom: 10px; }
+    .price { color: #1976d2; font-weight: bold; margin-bottom: 15px; }
+    
+    .about-section {
+      background-color: #fff;
+      padding: 60px 20px;
+      border-radius: 15px;
+      margin-top: 40px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    }
+
+    .about-content {
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+    
+    .about-text {
+      flex: 1;
+      min-width: 300px;
+    }
+    
+    .about-text p {
+      line-height: 1.8;
+      margin-bottom: 15px;
+      color: #555;
+    }
+
+    .about-image {
+      flex: 1;
+      max-width: 300px;
+      text-align: center;
+    }
+
+    .about-image img {
+      width: 100%;
+      max-width: 450px;
+      border-radius: 15px;
+      box-shadow:0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    @media (max-width: 768px) {
+      .about-content {
+        flex-direction: column-reverse
+      }
+    }
+
+    footer {
+      background: #0d47a1;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+<header class="main-header">
+  <div class="container-logo">
+    <img src="image/Logo Banua packing.jpeg" alt="Logo Banua packing" class="logo" />
+  </div>
+  <h1>Banua Packing</h1>
+  <nav>
+    <a href="#Home">Home</a>
+    <a href="#produk">Produk</a>
+    <a href="#tentang">Tentang kami</a>
+    <a href="#Admin">Admin</a>
+    <a href="#">Daftar</a>
+  </nav>
+</header>
+
+  <div class="search-box" id="Home" style="text-align:center; margin-top: 20px;">
+    <input
+      font-size= 18px;
+      size="50px"
+      type="text"
+      id="searchInput"
+      placeholder="🔎Cari Kebutuhan Packing Anda"
+      onkeyup="searchProduk()"
+      style="padding: 5px; width: 80%; max-width: 500px; border-radius: 20px; border: 1px solid #17d1c8; font-size:16px;"
+    />
+  </div>
+
+<section class="hero">
+  <h2></h2>
+  <p></p>
+  <a href="#produk" class="btn">Order Sekarang</a>
+</section>
+
+<section class="container" id="produk">
+  <h2 class="section-title">Produk Terbaru</h2>
+  <div class="products">
+    <div class="card">
+      <img src="image/unboxing 1.jpeg" />
+      <div class="card-body">
+        <h3>fragile unboxing</h3>
+        <h3>70x30 500 pcs/roll</h3>
+        <p class="price">Rp 26.958</p>
+        <a class="btn" href="#" onclick="orderWA('fragile unboxing 70x30', 'Rp 26.958')">Order</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="image/Thermal label.jpeg" />
+      <div class="card-body">
+        <h3>Thermal label</h3>
+        <h3>70x100 500 pcs/roll</h3>
+        <p class="price">Rp 23.984</p>
+        <a class="btn" href="#" onclick="orderWA('Thermal label 70x100', 'Rp 23.984')">Order</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="image/lakban.jpeg" />
+      <div class="card-body">
+        <h3>lakban coklat & bening 45x90</h3>
+        <h3>1/72 dus</h3>
+        <p class="price">Rp 469.820</p>
+        <a class="btn" href="#" onclick="orderWA('lakban coklat & bening 45x90', 'Rp 469.820')">Order</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="image/lakban.jpeg" />
+      <div class="card-body">
+        <h3>lakban coklat & bening 45x100</h3>
+        <h3>1/72 dus</h3>
+        <p class="price">Rp 499.820</p>
+        <a class="btn" href="#" onclick="orderWA('lakban coklat & bening 45x100', 'Rp 499.820')">Order</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="image/C12x6.jpeg" />
+      <div class="card-body">
+        <h3>kardus custome 12x6</h3>
+        <h3>1/50 pcs</h3>
+        <p class="price">Rp 34.000</p>
+        <a class="btn" href="#" onclick="orderWA('kardus custome 12x6x6', 'Rp 34.000')">Order</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="image/custume.jpeg" />
+      <div class="card-body">
+        <h3>Kardus custome 12x6.5</h3>
+        <h3>1/50 pcs</h3>
+        <p class="price">Rp 34.000</p>
+        <a class="btn" href="#" onclick="orderWA('Kardus custome 12x6.5', 'Rp 34.000')">Order</a>
+      </div>
+    </div>
+    
+    <div class="card">
+      <img src="image/c13x6x8.jpeg" />
+      <div class="card-body">
+        <h3>kardus custome 13x6x8</h3>
+        <h3>1/50 pcs</h3>
+        <p class="price">Rp 36.500</p>
+        <a class="btn" href="#" onclick="orderWA('kardus custome 13x6x8', 'Rp 36.500')">Order</a>
+      </div>
+    </div>
+ 
+    <div class="card">
+      <img src="image/c10x10x8.jpeg" />
+      <div class="card-body">
+        <h3>kardus custome 10x10x8</h3>
+        <h3>1/50 pcs</h3>
+        <p class="price">Rp 39.000</p>
+        <a class="btn" href="#" onclick="orderWA('kardus custome 10x10x8','Rp 39.000')">Order</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="image/c11x11x5.jpeg" />
+      <div class="card-body">
+        <h3>kardus custome 11x11x5</h3>
+        <h3>1/50 pcs</h3>
+        <p class="price">Rp 39.000</p>
+        <a class="btn" href="#" onclick="orderWA('kardus custome 11x11x5','Rp 39.000')">Order</a>
+      </div>
+    </div>  
+     
+    <div class="card">
+      <img src="image/c17x9x6.jpeg" />
+      <div class="card-body">
+        <h3>kardus custome 17x9x6</h3>
+        <h3>1/50 pcs</h3>
+        <p class="price">Rp 44.000</p>
+        <a class="btn" href="#" onclick="orderWA('kardus custome 17x9x6','Rp 44.000')">Order</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="image/c15x10x10.jpeg" />
+      <div class="card-body">
+        <h3>kardus custome 15x10x10</h3>
+        <h3>1/50 pcs</h3>
+        <p class="price">Rp 54.000</p>
+        <a class="btn" href="#" onclick="orderWA('kardus custome 15x10x10','Rp 54.000')">Order</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="image/c12x12x8.jpeg" />
+      <div class="card-body">
+        <h3>kardus custome 12x12x8</h3>
+        <h3>1/50 pcs</h3>
+        <p class="price">Rp 41.500</p>
+        <a class="btn" href="#" onclick="orderWA('kardus custome 12x12x8','Rp 41.500')">Order</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="image/c12x12x10.jpeg" />
+      <div class="card-body">
+        <h3>kardus custome 12x12x10</h3>
+        <h3>1/50 pcs</h3>
+        <p class="price">Rp 46.500</p>
+        <a class="btn" href="#" onclick="orderWA('kardus custome 12x12x10','Rp 46.500')">Order</a>
+      </div>
+     </div> 
+
+    <div class="card">
+      <img src="image/c18x10x8.jpeg" />
+      <div class="card-body">
+        <h3>kardus custome 18x10x8</h3>
+        <h3>1/50 pcs</h3>
+        <p class="price">Rp 49.000</p>
+        <a class="btn" href="#" onclick="orderWA('kardus custome 18x10x8','Rp 49.000')">Order</a>
+      </div>
+     </div>
+    
+    <div class="card">
+      <img src="image/c20x11x11.jpeg" />
+      <div class="card-body">
+        <h3>kardus custome 20x11x11</h3>
+        <h3>1/50 pcs</h3>
+        <p class="price">Rp 71.500</p>
+        <a class="btn" href="#" onclick="orderWA('kardus custome 20x11x11','Rp 71.500')">Order</a>
+      </div>
+     </div>
+
+    <div class="card">
+      <img src="image/c20x15x10.jpeg" />
+      <div class="card-body">
+        <h3>kardus custome 20x15x10</h3>
+        <h3>1/50 pcs</h3>
+        <p class="price">Rp 96.500</p>
+        <a class="btn" href="#" onclick="orderWA('kardus custome 20x15x10','Rp 96.500')">Order</a>
+      </div>
+     </div>
+
+    <div class="card">
+      <img src="image/c20x20x15.jpeg" />
+      <div class="card-body">
+        <h3>kardus custome 20x20x15</h3>
+        <h3>1/50 pcs</h3>
+        <p class="price">Rp 117.500</p>
+        <a class="btn" href="#" onclick="orderWA('kardus custome 20x20x15','Rp 117.500')">Order</a>
+      </div>
+     </div>
+
+    <div class="card">
+      <img src="image/c30x11x11.jpeg" />
+      <div class="card-body">
+        <h3>kardus custome 30x11x11</h3>
+        <h3>1/50 pcs</h3>
+        <p class="price">Rp 99.000</p>
+        <a class="btn" href="#" onclick="orderWA('kardus custome 30x11x11','Rp 99.000')">Order</a>
+      </div>
+     </div> 
+    
+     <div class="card">
+      <img src="image/plastik sampah.jpeg" />
+      <div class="card-body">
+        <h3>plastik sampah 90x120</h3>
+        <h3>1/10 pcs</h3>
+        <p class="price">Rp 21.000</p>
+        <a class="btn" href="#" onclick="orderWA('plastik sampah 90x120','Rp 21.000')">Order</a>
+      </div>
+     </div>
+
+    <div class="card">
+      <img src="image/plastik sampah.jpeg" />
+      <div class="card-body">
+        <h3>plastik sampah 100x120</h3>
+        <h3>1/10 pcs</h3>
+        <p class="price">Rp 25.000</p>
+        <a class="btn" href="#" onclick="orderWA('plastik sampah 100x120','Rp 25.000')">Order</a>
+      </div>
+     </div>
+
+    <div class="card">
+      <img src="image/polymailer sedang.jpeg" />
+      <div class="card-body">
+        <h3>polymailer 30x40</h3>
+        <h3>1/100 pcs</h3>
+        <p class="price">Rp 34.879</p>
+        <a class="btn" href="#" onclick="orderWA('polymailer 30x40','Rp 34.879')">Order</a>
+      </div>
+     </div>
+
+    <div class="card">
+      <img src="image/polymailer sedang.jpeg" />
+      <div class="card-body">
+        <h3>polymailer 17x30</h3>
+        <h3>1/100 pcs</h3>
+        <p class="price">Rp 19.957</p>
+        <a class="btn" href="#" onclick="orderWA('polymailer 17x30','Rp 18.957')">Order</a>
+      </div>
+     </div>
+
+    <div class="card">
+      <img src="image/polymailer sedang.jpeg" />
+      <div class="card-body">
+        <h3>polymailer 10x20</h3>
+        <h3>1/100 pcs</h3>
+        <p class="price">Rp 16.957</p>
+        <a class="btn" href="#" onclick="orderWA('polymailer 10x20','Rp 16.957')">Order</a>
+      </div>
+     </div>
+
+    <div class="card">
+      <img src="image/polymailer sedang.jpeg" />
+      <div class="card-body">
+        <h3>polymailer 16x20</h3>
+        <h3>1/100 pcs</h3>
+        <p class="price">Rp 17.957</p>
+        <a class="btn" href="#" onclick="orderWA('polymailer 16x20','Rp 17.957')">Order</a>
+      </div>
+     </div> 
+
+    <div class="card">
+      <img src="image/polymailer sedang.jpeg" />
+      <div class="card-body">
+        <h3>polymailer 20x30</h3>
+        <h3>1/100 pcs</h3>
+        <p class="price">Rp 22.957</p>
+        <a class="btn" href="#" onclick="orderWA('polymailer 20x30','Rp 22.957')">Order</a>
+      </div>
+     </div>
+
+    <div class="card">
+      <img src="image/polymailer sedang.jpeg" />
+      <div class="card-body">
+        <h3>polymailer 35x50</h3>
+        <h3>1/100 pcs</h3>
+        <p class="price">Rp 41.230</p>
+        <a class="btn" href="#" onclick="orderWA('polymailer 35x50','Rp 41.230')">Order</a>
+      </div>
+     </div>
+
+     <div class="card">
+      <img src="image/buble wrap.jpeg" />
+      <div class="card-body">
+        <h3>buble wrap hitam & putih</h3>
+        <h3>125x50</h3>
+        <p class="price">Rp 210.000</p>
+        <a class="btn" href="#" onclick="orderWA('buble wrap hitam & putih','Rp 210.000')">Order</a>
+      </div>
+  </div>
+</section>
+
+<section class="container" id="tentang">
+  <div class="about-section">
+    <h2 class="section-title">tentang kami</h2>
+    <div class="about-content">
+      <div class="about-text">
+        <p>
+          <strong>BanuaPacking</strong> hadir sebagai mitra strategis bagi pelaku bisnis di era digital. Kami memahami bahwa pengemasan bukan sekadar pembungkus, melainkan garda terdepan dalam menjaga integritas produk serta citra brand Anda. Sebagai penyedia kebutuhan packaging yang komprehensif, kami berkomitmen untuk mendukung kelancaran operasional toko online dan manajemen gudang logistik melalui penyediaan material berkualitas tinggi.
+        </p>
+        <p>          
+          <p>
+          <strong>Layanan & Produk Kami</strong>
+        </p>
+        <p>
+          Kami menyediakan ekosistem perlengkapan pengemasan yang dirancang untuk memenuhi berbagai skala kebutuhan:
+        </p>
+        <p>
+          <ul style="margin-left: 20px; color: #555;">
+            <li><strong>Kebutuhan Toko Online:</strong></li>
+              <p>Mulai dari polymailer premium, bubble wrap ekstra tebal, hingga lakban dengan daya rekat tinggi untuk memastikan paket sampai ke tangan konsumen dengan estetika yang terjaga.</p>
+            <li><strong>Solusi Gudang & Logistik:</strong></li>
+              <p>Penyediaan karton box berbagai ukuran (standar & kustom), stretch film untuk palet, hingga alat pendukung pengemasan industri yang menunjang kecepatan proses packing di gudang.</p>
+            <strong>Mengapa Bermitra dengan Banua Packing?</strong>
+            </p>
+            <p>
+          <ol style="margin-left: 20px; color: #474747;">
+            <li><strong>Kualitas Material Terjamin:</strong> Kami hanya menyediakan produk yang telah melalui kontrol kualitas ketat untuk meminimalisir risiko kerusakan barang selama transit.</li>
+          </p>
+          <p>
+            <li><strong>Stabilitas Pasokan:</strong> Kami menjamin ketersediaan stok yang konsisten guna mendukung ritme pengiriman bisnis Anda yang dinamis.</li>
+          </p>
+          <p>
+            <li><strong>Harga Kompetitif:</strong> Dengan jaringan pemasok yang luas, kami mampu menawarkan harga yang bersaing tanpa mengorbankan kualitas.</li>
+          </p>
+          <p>
+            <li><strong>Pelayanan Pelanggan Responsif:</strong> Tim kami siap memberikan konsultasi dan solusi pengemasan yang tepat sesuai kebutuhan spesifik bisnis Anda.</li>
+          </p>            
+            <li><strong>Pengiriman Cepat & Tepat:</strong>Memahami urgensi dalam dunia logistik, kami memastikan setiap pesanan mitra diproses dan dikirimkan tepat waktu.</li>
+          </p>          
+          <strong>Visi Kemitraan</strong>
+          <p>Kami bertujuan menjadi pilar pendukung bagi pertumbuhan bisnis Anda. Dengan menyerahkan urusan pengemasan kepada Banua Packing, Anda dapat lebih fokus pada pengembangan produk dan peningkatan penjualan, sementara kami memastikan setiap produk Anda terproteksi dengan sempurna.</p>
+          <strong>Hubungi Kami</strong>
+          <p>Mari bangun kolaborasi yang saling menguntungkan. Banua Packing siap menjadi bagian dari rantai pasok kesuksesan bisnis Anda.</p>
+          </ul>
+        </p>
+      </div>
+      <div class="about-image">
+        <img src="image/Logo Banua packing.jpeg" alt="Tentang Banua packing">
+      </div>
+    </div>
+  </div>
+
+  <section class="container" id="Admin">
+  <div class="about-section">
+    <h2 class="section-title">Admin</h2>
+    <div class="about-content">
+      <div class="about-text">
+        <p>
+          <strong>MS.</strong> Raudina S.i
+        </p>
+        <dv class="about-image">
+          <img src="image/admin cewek berhijab.jpeg" alt="Admin Banua Packing">
+        </dv>
+</section>
+
+<footer>
+  <p>© 2026 Banua Packing. Marketplace Banua Packing Profesional.</p>
+</footer>
+
+<script>
+  const productList = document.getElementById('productList');
+  const products = JSON.parse(localStorage.getItem('products')) || [];
+  
+  function renderProduk(data) {
+    productList.innerHTML = '';
+    
+    if (data.length === 0) {
+      productList.innerHTML = '<p>Produk tidak ditemukan</p>';
+      return;
+    }
+
+    data.forEach(p => {
+      productList.innerHTML += `
+        <div class="card">
+          <img src="${p.image}">
+          <div class="card-body">
+            <h3>${p.name}</h3>
+            <p class="price">${p.price}</p>
+            <a class="btn" href="#" onclick="orderWA('${p.name}','${p.price}')">Order</a>
+          </div>
+        </div>
+      `;
+    });
+  }
+</script>
+
+<script>
+  function searchProduk() {
+    const keyword = document.getElementById('searchInput').value.toLowerCase();
+    const cards= document.querySelectorAll('.products .card');
+    cards.forEach(card => {
+      const namaProduk = card.querySelector('h3').innerText.toLocaleLowerCase();
+      if(namaProduk.includes(keyword)){
+        card.style.display ="";
+      } else {
+        card.style.display = "none";
+      }
+    });
+  }
+</script>
+<script src="script.js"></script>
+</body>
+</html>
