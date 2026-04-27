@@ -2,7 +2,7 @@
 //  - JavaScript
 // =============================
 
-const nomorWA = "6285603575395" ;
+const nomorWA = "6282156137692" ;
 
 // Buat modal popup otomatis
 const modalHTML = `
