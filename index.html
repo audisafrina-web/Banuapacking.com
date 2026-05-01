@@ -103,6 +103,25 @@
       height: 200px;
       object-fit: cover;
     }
+    .card-slider {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+      width: 100%;
+      height: 200px;
+    } 
+    .card-slider::-webkit-scrollbar {
+      display: none;
+    }
+    .card-slider img {
+      width: 250px;
+      flex_shrink: 0;
+      scroll-snap-align: start;
+      object-fit: cover;
+      height: 200px;
+    }
     .card-body { padding: 20px; }
     .card-body h3 { font-size: 20px; margin-bottom: 10px; }
     .price { color: #1976d2; font-weight: bold; margin-bottom: 15px; }
@@ -199,7 +218,11 @@
   <h2 class="section-title">Produk Terbaru</h2>
   <div class="products">
     <div class="card">
-      <img src="image/unboxing 1.jpeg" />
+      <div class="card-slider">
+       <img src="image/unboxing 1.jpeg"  alt="fragile Unboxing 70x30 tape 1" />
+       <img src="image/unboxing 2.jpeg"  alt="fragile Unboxing 70x30 tape 2" />
+      </div>
+      
       <div class="card-body">
         <h3>fragile unboxing</h3>
         <h3>70x30 500 pcs/roll</h3>
